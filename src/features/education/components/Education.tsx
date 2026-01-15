@@ -1,38 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Container } from "../layout/Container";
-import { Badge } from "../ui/badge";
-
-const educationData = [
-  {
-    institution: "Continuous Self-Learning",
-    qualification: "Advanced Frontend Development",
-    period: "Ongoing",
-    description:
-      "Advanced frontend development through self-learning, real-world projects, and online platforms. Hands-on experience with React, Next.js, TanStack ecosystem, authentication systems, and SaaS architectures.",
-  },
-  {
-    institution: "NOVA Group of Institution - Kochi",
-    qualification: "Diploma in Web Design",
-    period: "2012 - 2013",
-    description: "Diploma in Web Design and Development.",
-  },
-  {
-    institution: "GVHSS Pullanur - Malappuram",
-    qualification: "DHSE (Plus Two)",
-    period: "2011",
-    description: "Department of Higher Secondary Education.",
-  },
-  {
-    institution: "PPMHSS Kottukara - Malappuram",
-    qualification: "SSLC",
-    period: "2009",
-    description: "Kerala State Education Board.",
-  },
-];
+import { Container } from "@/components/layout/Container";
+import { Badge } from "@/components/ui/badge";
+import { educationData } from "../data/education";
 
 export function Education() {
+  const { title, subtitle, description, items } = educationData;
+
   return (
     <section id="education" className="py-24 relative bg-neutral-950">
       <Container>
@@ -41,21 +16,19 @@ export function Education() {
             variant="outline"
             className="mb-4 text-primary border-primary/20 bg-primary/5"
           >
-            Academic Journey
+            {subtitle}
           </Badge>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-white">
-            Education
+            {title}
           </h2>
-          <p className="text-lg text-neutral-400">
-            My foundational qualifications and continuous pursuit of knowledge.
-          </p>
+          <p className="text-lg text-neutral-400">{description}</p>
         </div>
 
         <div className="relative max-w-2xl mx-auto space-y-8">
           {/* Timeline Line */}
           <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10" />
 
-          {educationData.map((edu, index) => (
+          {items.map((edu, index) => (
             <motion.div
               key={edu.institution}
               initial={{ opacity: 0, x: -20 }}

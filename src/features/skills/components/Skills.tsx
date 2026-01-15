@@ -1,10 +1,19 @@
-import { Database, LayoutGrid, Lock, Wrench } from "lucide-react";
-import { Container } from "../layout/Container";
-import { Badge } from "../ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Database,
+  LayoutGrid,
+  Lock,
+  Sparkles,
+  TrendingUp,
+  Wrench,
+} from "lucide-react";
+import { Container } from "@/components/layout/Container";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { skillsData } from "../data/skills";
 
 // Helper to map category to icon
 const CategoryIcon = ({ name }: { name: string }) => {
+  // Simple mapping, could be strict typed if we extract category names as a Union type
   switch (name) {
     case "Frontend Core":
       return <LayoutGrid className="h-5 w-5 text-neutral-300" />;
@@ -16,56 +25,13 @@ const CategoryIcon = ({ name }: { name: string }) => {
       return <Lock className="h-5 w-5 text-primary" />;
     case "Testing & Build Tools":
       return <Wrench className="h-5 w-5 text-neutral-300" />;
+    case "Digital Marketing & SEO":
+      return <TrendingUp className="h-5 w-5 text-primary" />;
+    case "AI & Workflow":
+      return <Sparkles className="h-5 w-5 text-primary" />;
     default:
       return null;
   }
-};
-
-const skillsData = {
-  "Frontend Core": [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "Next.js 15",
-    "Vite.js",
-    "TanStack Router",
-    "TanStack Start",
-  ],
-  "Styling & UI": [
-    "Tailwind CSS",
-    "Shadcn UI",
-    "Ant Design",
-    "Bootstrap",
-    "Hero UI",
-    "Material UI",
-    "CSS Modules",
-    "SCSS",
-    "Figma Design",
-  ],
-  "State & Data": [
-    "Redux",
-    "Zustand",
-    "RTK Query",
-    "React Query",
-    "oRPC/TRPC",
-    "Zod.js",
-    "Yup.js",
-    "React Hook Form",
-  ],
-  "Backend & Auth": [
-    "Node.js",
-    "Express.js",
-    "NestJS",
-    "Hono",
-    "Auth.js",
-    "Better Auth",
-    "PostgreSQL",
-    "MongoDB",
-    "MySQL",
-  ],
-  "Testing & Build Tools": ["Vitest", "Jest", "Cypress", "Rollup", "Webpack"],
 };
 
 export function Skills() {

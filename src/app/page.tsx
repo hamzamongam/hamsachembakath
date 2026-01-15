@@ -1,14 +1,14 @@
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { About } from "@/components/sections/About";
-import { Architecture } from "@/components/sections/Architecture";
-import { Awards } from "@/components/sections/Awards";
-import { Contact } from "@/components/sections/Contact";
-import { Education } from "@/components/sections/Education";
-import { Experience } from "@/components/sections/Experience";
-import { Hero } from "@/components/sections/Hero";
-import { Projects } from "@/components/sections/Projects";
-import { Skills } from "@/components/sections/Skills";
+import { About } from "@/features/about";
+import { Architecture } from "@/features/architecture";
+import { Awards } from "@/features/awards";
+import { Contact } from "@/features/contact";
+import { Education } from "@/features/education";
+import { Experience } from "@/features/experience";
+import { Hero } from "@/features/hero"; // Updated import
+import { Projects } from "@/features/projects";
+import { Skills } from "@/features/skills";
 
 export default function Home() {
   return (
