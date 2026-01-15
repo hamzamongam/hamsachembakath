@@ -2,26 +2,24 @@ import { ExternalLink, Folder, Github } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { projectsData } from "../data/projects";
 
 export function Projects() {
   const { title, subtitle, description, items } = projectsData;
 
   return (
-    <section id="projects" className="py-24 bg-neutral-900">
+    <section id="projects" className="py-24 bg-neutral-950 relative">
+      {/* Background Glow */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none" />
+
       <Container>
-        <div className="mb-16 md:text-center max-w-3xl mx-auto">
+        <div className="mb-16 md:text-center max-w-3xl mx-auto relative z-10">
           <Badge
             variant="outline"
-            className="mb-4 text-primary border-primary/20 bg-primary/5"
+            className="mb-4 text-primary border-primary/20 bg-primary/5 backdrop-blur-sm"
           >
             {subtitle}
           </Badge>
@@ -31,61 +29,57 @@ export function Projects() {
           <p className="text-lg text-neutral-400">{description}</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 relative z-10">
           {items.map((project) => (
-            <Card
+            <CardSpotlight
               key={project.title}
-              className="flex flex-col bg-white/5 border-white/10 hover:border-primary/50 transition-colors duration-300"
+              className="flex flex-col h-full bg-neutral-900/40 backdrop-blur-md border-white/5"
             >
               <CardHeader>
-                <div className="mb-4 p-3 bg-white/5 w-fit rounded-lg">
-                  <Folder className="h-6 w-6 text-primary" />
+                <div className="flex justify-between items-start mb-4">
+                  <div className="p-3 bg-primary/10 w-fit rounded-xl border border-primary/20">
+                    <Folder className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex gap-2">
+                    {project.links.github && (
+                      <Link
+                        href={project.links.github}
+                        target="_blank"
+                        className="p-2 rounded-full hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+                      >
+                        <Github className="h-5 w-5" />
+                      </Link>
+                    )}
+                    <Link
+                      href={project.links.demo}
+                      target="_blank"
+                      className="p-2 rounded-full hover:bg-white/10 text-neutral-400 hover:text-white transition-colors"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                    </Link>
+                  </div>
                 </div>
-                <CardTitle className="text-xl text-white">
+                <CardTitle className="text-xl text-white font-semibold tracking-wide">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-neutral-400 mb-6 leading-relaxed">
+                <p className="text-neutral-400 mb-6 leading-relaxed text-sm">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tags.map((tag) => (
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="bg-neutral-900 text-neutral-300 border-neutral-800"
+                      className="bg-white/5 text-neutral-300 border border-white/5 hover:bg-primary/20 hover:text-primary hover:border-primary/20 transition-all duration-300"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="gap-4 pt-4 border-t border-white/5">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex-1 border-white/10 bg-transparent text-neutral-300 hover:text-white hover:bg-white/5"
-                  asChild
-                >
-                  <Link href={project.links.demo}>
-                    <ExternalLink className="mr-2 h-4 w-4" /> Demo
-                  </Link>
-                </Button>
-                {project.links.github && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 border-white/10 bg-transparent text-neutral-300 hover:text-white hover:bg-white/5"
-                    asChild
-                  >
-                    <Link href={project.links.github}>
-                      <Github className="mr-2 h-4 w-4" /> Code
-                    </Link>
-                  </Button>
-                )}
-              </CardFooter>
-            </Card>
+            </CardSpotlight>
           ))}
         </div>
       </Container>

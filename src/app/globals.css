@@ -8,28 +8,28 @@
   /* Enforce Dark Mode by Default - Midnight Theme */
   --background: 240 10% 4%; /* #0a0a0b - Deep black/blue */
   --foreground: 0 0% 98%;
-  
+
   --card: 240 10% 4%;
   --card-foreground: 0 0% 98%;
-  
+
   --popover: 240 10% 4%;
   --popover-foreground: 0 0% 98%;
-  
+
   --primary: 263.4 70% 50.4%; /* Deep Violet */
   --primary-foreground: 210 40% 98%;
-  
+
   --secondary: 217.2 32.6% 17.5%;
   --secondary-foreground: 210 40% 98%;
-  
+
   --muted: 217.2 32.6% 17.5%;
   --muted-foreground: 215 20.2% 65.1%;
-  
+
   --accent: 217.2 32.6% 17.5%;
   --accent-foreground: 210 40% 98%;
-  
+
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
-  
+
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
   --ring: 263.4 70% 50.4%;
@@ -61,8 +61,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
-  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 
   @keyframes spotlight {
     0% {
@@ -71,7 +71,22 @@
     }
     100% {
       opacity: 1;
-      transform: translate(-50%,-40%) scale(1);
+      transform: translate(-50%, -40%) scale(1);
+    }
+  }
+
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
     }
   }
 }
@@ -85,6 +100,6 @@
   }
   /* Force dark mode behavior even without class */
   :root {
-      color-scheme: dark;
+    color-scheme: dark;
   }
 }

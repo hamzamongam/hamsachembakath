@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { TerminalOverlay } from "@/features/developer-mode";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -99,8 +100,11 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
-        <ScrollToTop />
+        <div className="flex flex-col min-h-screen">
+          {children}
+          <ScrollToTop />
+          <TerminalOverlay />
+        </div>
       </body>
     </html>
   );
