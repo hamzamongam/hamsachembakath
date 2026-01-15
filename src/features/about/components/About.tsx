@@ -45,11 +45,18 @@ export function About() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-square lg:aspect-auto lg:h-full min-h-[300px] rounded-2xl bg-muted overflow-hidden border">
+          <div className="relative aspect-square sm:aspect-4/5 lg:aspect-square max-h-[500px] lg:max-h-[600px] w-full max-w-md mx-auto rounded-2xl bg-muted overflow-hidden border border-white/10 shadow-2xl group">
+            {/* Banner Accent */}
+            <div className="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-transparent via-primary/50 to-transparent z-20 opacity-50 group-hover:opacity-100 transition-opacity" />
+
+            {/* Darker Shade Overlays */}
+            <div className="absolute inset-0 bg-black/40 z-10 hover:bg-black/10 transition-colors duration-500" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/50 to-transparent z-10" />
+
             <img
               src="/profile.jpg"
               alt="Hamsa Chembakath"
-              className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              className="object-cover w-full h-full grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
                 const fallback = e.currentTarget.nextElementSibling;
@@ -60,7 +67,7 @@ export function About() {
               }}
             />
             {/* Fallback if image missing */}
-            <div className="hidden absolute inset-0 items-center justify-center bg-linear-to-br from-background to-muted">
+            <div className="hidden absolute inset-0 items-center justify-center bg-linear-to-br from-background to-muted z-0">
               <div className="text-center p-8">
                 <div className="text-4xl font-bold text-foreground/10 select-none">
                   GROWTH
