@@ -27,6 +27,7 @@ export interface HeroData {
   };
   subheadline: string;
   actions: HeroAction[];
+  profileImage: string;
   techStack: {
     title: string;
     items: TechStackItem[];

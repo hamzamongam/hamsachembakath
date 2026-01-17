@@ -1,14 +1,14 @@
 import { HeroData } from "../types/hero.types";
 
 export const heroData: HeroData = {
-  badge: "Available for new opportunities",
+  badge: "Open to Senior Frontend Roles",
   headline: {
     prefix: "Senior",
     highlight: "React & Next.js",
-    suffix: "Developer",
+    suffix: "Engineer",
   },
   subheadline:
-    "With 7+ years of experience building high-performance web applications. I specialize in scalable frontend architecture, modern TypeScript, and enterprise-grade UI systems.",
+    "Specialize in building scalable SaaS products, high-performance web architectures, and intuitive UI systems. 7+ years of experience delivering for product-based companies.",
   actions: [
     {
       label: "View Featured Work",
@@ -21,6 +21,7 @@ export const heroData: HeroData = {
       primary: false,
     },
   ],
+  profileImage: "/profile.jpg",
   techStack: {
     title: "Powering modern experiences with",
     items: [

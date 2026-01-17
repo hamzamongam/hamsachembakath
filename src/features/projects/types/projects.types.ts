@@ -1,6 +1,8 @@
 export interface ProjectItem {
   title: string;
   description: string;
+  role: string;
+  outcomes: string[];
   tags: string[];
   links: {
     demo: string;

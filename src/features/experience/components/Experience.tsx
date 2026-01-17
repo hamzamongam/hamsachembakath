@@ -140,7 +140,7 @@ export function Experience() {
           <p className="text-lg text-neutral-400">{description}</p>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-full mx-auto">
           {/* Vertical Line */}
           <div className="absolute left-8 top-4 bottom-4 w-px bg-white/10 md:left-1/2 md:-translate-x-px" />
 

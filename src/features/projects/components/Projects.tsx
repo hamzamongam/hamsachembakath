@@ -59,14 +59,32 @@ export function Projects() {
                     </Link>
                   </div>
                 </div>
+                <div className="mb-2">
+                  <span className="text-xs font-semibold text-primary/80 uppercase tracking-wider">
+                    {project.role}
+                  </span>
+                </div>
                 <CardTitle className="text-xl text-white font-semibold tracking-wide">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-1">
-                <p className="text-neutral-400 mb-6 leading-relaxed text-sm">
+                <p className="text-neutral-400 mb-4 leading-relaxed text-sm">
                   {project.description}
                 </p>
+                {project.outcomes && (
+                  <ul className="mb-6 space-y-2">
+                    {project.outcomes.map((outcome) => (
+                      <li
+                        key={outcome}
+                        className="text-neutral-400/80 text-xs flex items-start gap-2"
+                      >
+                        <span className="mt-1.5 w-1 h-1 rounded-full bg-primary/40 shrink-0" />
+                        <span>{outcome}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tags.map((tag) => (
                     <Badge

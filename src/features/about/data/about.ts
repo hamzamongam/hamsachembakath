@@ -1,11 +1,10 @@
-import { AboutData } from "../types/about.types";
+import type { AboutData } from "../types/about.types";
 
 export const aboutData: AboutData = {
-  title: "About Me",
+  title: "Engineering Philosophy",
   paragraphs: [
-    "I am a Senior React / Next.js Developer who bridges the gap between Engineering and Digital Marketing. With over 7 years of experience, I don't just build features—I build growth engines.",
-    "My expertise lies in Technical SEO, Performance Optimization (Core Web Vitals), and conversion-focused UI architecture. I understand how clean code directly impacts organic reach and user retention.",
-    "Currently, I architect scalable SaaS frontends that are 'Google-ready' by design. I combine strict type safety (TypeScript) with data-driven marketing strategies to deliver products that perform technically and commercially.",
+    "I am a Senior Frontend Engineer with over 7 years of experience building diverse digital products, from high-traffic real estate platforms to complex CRM systems. My core strength lies in bridging the gap between design and engineering—translating complex requirements into clean, maintainable codebases.",
+    "I focus on performance-driven architecture. Whether it's optimizing Core Web Vitals for SEO-heavy platforms or architecting complex state management for data-heavy dashboards, I prioritize user experience and long-term scalability. I don't just write code; I take ownership of the product lifecycle, ensuring that technical decisions align with business goals.",
   ],
-  keywords: ["Digital Marketing", "Technical SEO", "Growth Engines"],
+  keywords: ["Product Engineering", "SaaS Architecture", "Performance"],
 };
