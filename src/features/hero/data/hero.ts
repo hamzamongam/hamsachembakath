@@ -3,12 +3,12 @@ import { HeroData } from "../types/hero.types";
 export const heroData: HeroData = {
   badge: "Available for new opportunities",
   headline: {
-    prefix: "Building",
-    highlight: "Digital Products",
-    suffix: "that matter.",
+    prefix: "Senior",
+    highlight: "React & Next.js",
+    suffix: "Developer",
   },
   subheadline:
-    "I'm Hamsa Chembakath, a Senior Frontend Architect. I specialize in crafting high-performance SaaS applications using Next.js, modern TypeScript, and beautiful, accessible UI systems.",
+    "With 7+ years of experience building high-performance web applications. I specialize in scalable frontend architecture, modern TypeScript, and enterprise-grade UI systems.",
   actions: [
     {
       label: "View Featured Work",
