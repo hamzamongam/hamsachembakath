@@ -17,11 +17,11 @@ export const heroData: HeroData = {
     },
     {
       label: "Download CV",
-      href: "/resume.pdf",
+      href: "/hamsa-chembakath-02-2026.pdf",
       primary: false,
     },
   ],
-  profileImage: "/profile.jpg",
+  profileImage: "/hero-banner.jpg",
   techStack: {
     title: "Powering modern experiences with",
     items: [

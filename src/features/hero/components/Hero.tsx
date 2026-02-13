@@ -59,7 +59,7 @@ export function Hero() {
                 className="text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl text-white mb-6 break-words"
               >
                 {headline.prefix}{" "}
-                <span className="text-transparent bg-clip-text bg-linear-to-b from-neutral-200 to-neutral-600 block sm:inline">
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 block sm:inline">
                   {headline.highlight}
                 </span>{" "}
                 {headline.suffix}

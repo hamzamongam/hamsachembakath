@@ -17,29 +17,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hamsa Chembakath | Senior App Architect & Growth Engineer",
+  metadataBase: new URL("https://hamsadev.com"),
+  title: {
+    default: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
+    template: "%s | Hamsa Chembakath",
+  },
   description:
-    "Senior React / Next.js Developer specialized in SaaS architecture, Technical SEO, and Digital Growth. Building high-performance products that drive conversion.",
+    "Senior React / Next.js Developer specialized in SaaS architecture, Technical SEO, and Digital Growth. Creator of Skoohub - A comprehensive School Management System built with TanStack Start & oRPC.",
   keywords: [
     "Hamsa Chembakath",
     "Senior Frontend Developer",
+    "Full-Stack Developer",
     "Growth Engineer",
     "Technical SEO",
-    "Digital Marketing",
-    "Conversion Rate Optimization",
     "Next.js Architect",
     "SaaS Development",
-    "Web Performance",
+    "TanStack Start",
+    "oRPC",
+    "Skoohub",
+    "School Management System",
+    "PWA",
   ],
-  authors: [{ name: "Hamsa Chembakath", url: "https://hamsa.dev" }],
+  authors: [{ name: "Hamsa Chembakath", url: "https://hamsadev.com" }],
   creator: "Hamsa Chembakath",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hamsa.dev",
-    title: "Hamsa Chembakath | Senior App Architect & Growth Engineer",
+    url: "https://hamsadev.com",
+    title: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
     description:
-      "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies.",
+      "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies. Founder of Skoohub.",
     siteName: "Hamsa Chembakath Portfolio",
     images: [
       {
@@ -52,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hamsa Chembakath | Senior App Architect & Growth Engineer",
+    title: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
     description:
       "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies.",
     images: ["/og-image.jpg"],
@@ -60,6 +67,17 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -81,7 +99,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Hamsa Chembakath",
-              url: "https://hamsachembakath.com",
+              url: "https://hamsadev.com",
               jobTitle: "Senior Frontend Developer",
               sameAs: [
                 "https://www.linkedin.com/in/hamsa-c-671569190/",
@@ -95,7 +113,9 @@ export default function RootLayout({
                 "SaaS",
                 "Technical SEO",
                 "Digital Growth",
-                "Conversion Rate Optimization",
+                "TanStack Start",
+                "oRPC",
+                "Skoohub",
               ],
             }),
           }}

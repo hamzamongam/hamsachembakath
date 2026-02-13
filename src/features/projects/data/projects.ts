@@ -7,6 +7,21 @@ export const projectsData: ProjectsData = {
     "A collection of products where I drove technical architecture and business impact.",
   items: [
     {
+      title: "Skoohub",
+      role: "Full-Stack Developer",
+      description:
+        "A comprehensive School Management System built from the ground up using TanStack Start and oRPC. Architected for performance and type safety, it features a scalable multi-tenant schema and robust role-based access control.",
+      outcomes: [
+        "Architected type-safe SaaS with TanStack Start & oRPC",
+        "Implemented robust auth & RBAC with BetterAuth",
+        "Designed scalable multi-tenant schema with Prisma",
+      ],
+      tags: ["TanStack Start", "oRPC", "Prisma", "BetterAuth"],
+      links: {
+        demo: "https://skoohub.com",
+      },
+    },
+    {
       title: "The Canadian Home",
       role: "Senior Frontend Engineer",
       description:
