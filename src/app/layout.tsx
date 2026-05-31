@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Hamsa Chembakath",
   },
   description:
-    "Senior React / Next.js Developer specialized in SaaS architecture, Technical SEO, and Digital Growth. Creator of Skoohub - A comprehensive School Management System built with TanStack Start & oRPC.",
+    "Senior React, Next.js & TanStack Start Architect specialized in scalable SaaS architecture, Technical SEO, and Digital Growth. Creator of Skoohub and CPL Arena.",
   keywords: [
     "Hamsa Chembakath",
     "Senior Frontend Developer",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://hamsadev.com",
     title: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
     description:
-      "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies. Founder of Skoohub.",
+      "Senior React, Next.js & TanStack Start Architect specialized in scalable SaaS architecture, high-performance applications, and data-driven growth. Founder of Skoohub.",
     siteName: "Hamsa Chembakath Portfolio",
     images: [
       {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
     description:
-      "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies.",
+      "Senior React, Next.js & TanStack Start Architect specialized in scalable SaaS architecture and high-performance applications.",
     images: ["/profile.png"],
     creator: "@hamzamongam",
   },
@@ -100,7 +100,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Hamsa Chembakath",
               url: "https://hamsadev.com",
-              jobTitle: "Senior Frontend Developer",
+              jobTitle: "Senior App Architect & Full-Stack Developer",
               sameAs: [
                 "https://www.linkedin.com/in/hamsa-c-671569190/",
                 "https://github.com/hamsachembakath",
@@ -115,7 +115,19 @@ export default function RootLayout({
                 "Digital Growth",
                 "TanStack Start",
                 "oRPC",
-                "Skoohub",
+                "Prisma",
+              ],
+              worksFor: [
+                {
+                  "@type": "Organization",
+                  name: "Skoohub",
+                  roleName: "Founder & Lead Architect",
+                },
+                {
+                  "@type": "Organization",
+                  name: "CPL Arena",
+                  roleName: "Full-Stack Developer",
+                },
               ],
             }),
           }}

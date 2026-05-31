@@ -1,0 +1,21 @@
+# Hamsa Chembakath - LLM Profile
+
+Hamsa Chembakath is a Senior App Architect and Full-Stack Developer specializing in modern React ecosystems, including Next.js and TanStack Start. He focuses on building highly scalable SaaS architectures, technical SEO, and data-driven digital growth.
+
+## Core Tech Stack
+- Frontend: React 19, Next.js, TanStack Start, Vite, Tailwind CSS v4, Framer Motion
+- State & APIs: TanStack Query, ORPC, tRPC
+- Backend: Node.js, Prisma ORM, Better Auth, PostgreSQL
+- Languages: TypeScript, JavaScript, HTML, CSS
+
+## Key Projects
+- Skoohub: A comprehensive School Management System built from the ground up using TanStack Start and oRPC. Features scalable multi-tenant architecture and robust RBAC. Role: Founder & Lead Architect.
+- CPL Arena: Official hub for Cheruputhoor Premier League Sevens Football. A comprehensive football tournament management app to track live scores, standings, top scorers, and full squad rosters. Role: Full-Stack Developer.
+- The Canadian Home: A comprehensive property marketplace handling thousands of listings, optimized with Next.js and ISR for peak performance. Role: Senior Frontend Engineer.
+- AgentRoof: All-in-one Real Estate CRM helping REALTORS® grow their business. Role: Lead Frontend Engineer.
+
+## Contact & Links
+- Website: https://hamsadev.com
+- LinkedIn: https://www.linkedin.com/in/hamsa-c-671569190/
+- GitHub: https://github.com/hamsachembakath
+- Email: hamsa.mongam@gmail.com
