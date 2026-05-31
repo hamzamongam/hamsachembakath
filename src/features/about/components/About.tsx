@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { aboutData } from "../data/about";
 
@@ -54,8 +55,11 @@ export function About() {
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/50 to-transparent z-10" />
 
             <img
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Hamsa Chembakath"
+              // fill
+              // width={500}
+              // height={500}
               className="object-cover w-full h-full grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105"
               onError={(e) => {
                 e.currentTarget.style.display = "none";

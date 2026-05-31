@@ -7,6 +7,21 @@ export const projectsData: ProjectsData = {
     "A collection of products where I drove technical architecture and business impact.",
   items: [
     {
+      title: "CPL Arena",
+      role: "Full-Stack Developer",
+      description:
+        "Official hub for CPL Sevens Football by Cheruputhoor Youth Club. A comprehensive football tournament management app to track live scores, standings, top scorers and full squad rosters.",
+      outcomes: [
+        "Built comprehensive tournament management system",
+        "Implemented real-time live score tracking",
+        "Designed squad and match schedule dashboards",
+      ],
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      links: {
+        demo: "https://cpl.hamsadev.com",
+      },
+    },
+    {
       title: "Skoohub",
       role: "Full-Stack Developer",
       description:

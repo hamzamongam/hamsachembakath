@@ -2,6 +2,119 @@ import { BlogPost } from "./types";
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "3",
+    slug: "building-scalable-web-apps-architecture-tech-stack",
+    title: "Building Scalable Web Apps: A Deep Dive into Modern Architecture and Tech Stacks",
+    excerpt:
+      "Discover the architectural decisions, modern tech stack, and Feature-Driven Development (FDD) approach that power highly scalable, robust web applications today.",
+    date: "May 31, 2026",
+    readTime: "8 min read",
+    author: {
+      name: "Hamsa",
+      avatar: "/avatar.jpg",
+    },
+    tags: ["React 19", "TanStack Start", "Architecture", "FDD", "Web Development"],
+    content: `
+      <p class="lead text-lg text-neutral-300 mb-8">
+        When building a modern, data-intensive web application, establishing a scalable, maintainable, and highly performant foundation is critical. In this post, we'll dive deep into an optimized project folder architecture, explore the cutting-edge packages we rely on, and explain the core philosophy behind our Feature-Driven Development (FDD) approach.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-12 mb-6">The Tech Stack: Packages Powering Modern Apps</h2>
+      <p class="mb-6 text-neutral-400">
+        Our architecture relies on a modern, type-safe stack designed for both an exceptional developer experience and blazing-fast end-user performance. Here is a breakdown of the key technologies we use:
+      </p>
+
+      <h3 class="text-xl font-semibold text-white mt-8 mb-4">Frontend & Full-Stack Capabilities</h3>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><strong>TanStack Start:</strong> We choose TanStack Start for full-stack SSR and hydration capabilities. It leverages Vite and provides fully type-safe, code-based routing, ensuring that broken links and missing parameters are caught at compile time.</li>
+        <li><strong>React 19 & Vite:</strong> We leverage the latest features of React 19 alongside Vite for rapid local development and optimized production builds. The React Compiler (<code>babel-plugin-react-compiler</code>) automatically memoizes components, drastically reducing boilerplate and manual performance tuning.</li>
+        <li><strong>Tailwind CSS v4:</strong> For highly customizable, utility-first styling with the latest engine performance improvements.</li>
+        <li><strong>Component Libraries:</strong> A robust combination of <code>@base-ui/react</code>, Radix UI primitives, and <code>lucide-react</code> for building accessible, premium interfaces without sacrificing customizability.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-white mt-8 mb-4">State Management & APIs</h3>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><strong>TanStack Query:</strong> Handling robust async state management, caching, and optimistic UI updates for a seamless, zero-latency feel.</li>
+        <li><strong>ORPC:</strong> Using <code>@orpc/server</code>, <code>@orpc/client</code>, and <code>@orpc/tanstack-query</code> for fully type-safe RPC API communication between our client and server. This eliminates the need for manual API typing and keeps the backend and frontend in perfect sync.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-white mt-8 mb-4">Backend & Database Layer</h3>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><strong>Prisma ORM:</strong> Powering our data layer with strongly typed database access (<code>@prisma/client</code> and <code>@prisma/adapter-pg</code>), making complex relational queries safe and intuitive.</li>
+        <li><strong>Better Auth:</strong> Providing a secure, comprehensive authentication system right out of the box.</li>
+        <li><strong>Zod:</strong> Heavily used for schema validation on both the client and server, guaranteeing data integrity at the boundaries.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-white mt-12 mb-6">High-Level Project Architecture</h2>
+      <p class="mb-6 text-neutral-400">
+        A well-structured repository promotes separation of concerns while keeping related code close together, minimizing context switching. Here is a look at the core <code>src/</code> directory:
+      </p>
+      
+      <div class="bg-neutral-900/50 border border-white/10 rounded-lg p-6 my-8 font-mono text-sm text-neutral-300 overflow-x-auto">
+<pre><code>src/
+├── components/      # Global shared UI components (e.g., buttons, layouts)
+├── config/          # Application configuration files
+├── features/        # Feature-based modules (The core of our FDD architecture)
+├── hooks/           # Global custom React hooks
+├── integrations/    # Third-party integrations (e.g., payment gateways, AWS S3)
+├── lib/             # Utility functions and shared libraries
+├── routes/          # TanStack Start file-based route definitions
+├── server/          # Global server setups and middleware
+├── styles.css       # Global CSS (Tailwind entry point)
+└── types/           # Global TypeScript type definitions</code></pre>
+      </div>
+
+      <p class="mb-6 text-neutral-400">
+        The beating heart of this architecture is the <code>src/features/</code> directory. Let's explore how we structure it to maximize team velocity.
+      </p>
+
+      <h2 class="text-2xl font-bold text-white mt-12 mb-6">Feature-Driven Development (FDD): Vertical Slices</h2>
+      <p class="mb-6 text-neutral-400">
+        To ensure our codebase scales gracefully as the application grows, we use a strict <strong>Vertical Slices Architectural pattern</strong>. Instead of organizing files strictly by technical role (e.g., grouping all controllers in one folder and all models in another), we group code by <strong>Feature</strong> (e.g., <code>users</code>, <code>billing</code>, <code>dashboard</code>).
+      </p>
+      
+      <p class="mb-6 text-neutral-400">
+        This approach drastically reduces cognitive load because all the context needed to understand or modify a feature is located in one place. Inside each feature directory, we split the code into two distinct layers: <code>domain</code> and <code>ui</code>.
+      </p>
+
+      <h3 class="text-xl font-semibold text-white mt-8 mb-4">1. The Domain Layer (Server & Business Logic)</h3>
+      <p class="mb-6 text-neutral-400">
+        The <code>domain/</code> directory contains server-side logic, database interactions, and API definitions. <strong>Crucially, the domain folder must NEVER import from the UI folder.</strong> This ensures business logic remains independent of presentation.
+      </p>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><code>[feature].schema.ts</code>: The single source of truth for all Zod schemas and TypeScript types. We avoid separate <code>type.ts</code> files to keep definitions consolidated.</li>
+        <li><code>[feature].repo.ts</code>: The Repository layer for Prisma database access. By abstracting DB calls here, we can easily manage complex transactions without cluttering business logic.</li>
+        <li><code>[feature].service.ts</code>: The Business Logic layer that orchestrates data and enforces domain rules.</li>
+        <li><code>[feature].contract.ts</code>: ORPC contract definitions mapping API input/output signatures.</li>
+        <li><code>[feature].router.ts</code>: API endpoint implementations. By tying this to specific features, we can securely scope our procedures via auth middleware by default.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-white mt-8 mb-4">2. The UI Layer (Client & Presentation)</h3>
+      <p class="mb-6 text-neutral-400">
+        The <code>ui/</code> directory houses React components and client-side logic specific to the feature.
+      </p>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><code>components/</code>: Feature-specific UI components (e.g., <code>ProfileForm</code>, <code>BillingTable</code>). We favor small, composed components over massive monoliths.</li>
+        <li><code>hooks/</code>: Custom hooks wrapping ORPC mutations and queries. This is where we implement Optimistic UI updates, caching strategies, and data transformations.</li>
+        <li><code>view/</code>: Page-level container components assembling smaller components into full views, which are then cleanly imported by <code>src/routes/</code>.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-white mt-12 mb-6">The True Benefits of Vertical Slices</h2>
+      <ul class="list-disc pl-6 mb-8 space-y-2 text-neutral-400">
+        <li><strong>Unmatched Predictability:</strong> Developers know exactly where to find the database query, the API route, and the React component for any given feature—they are all in the same folder. This eliminates hunting through deeply nested directories.</li>
+        <li><strong>React Compiler Optimization:</strong> Keeping stable constants outside components allows the React 19 Compiler to perfectly optimize our UI without manual hooks.</li>
+        <li><strong>Robust Security:</strong> By mandating authentication middleware at the feature router level, endpoints are secure by default, and access control logic lives next to the data it protects.</li>
+        <li><strong>Scalable Team Workflows:</strong> Multiple developers can work on separate features simultaneously with near-zero merge conflicts, as their changes are isolated to different vertical slices.</li>
+      </ul>
+
+      <div class="bg-neutral-900/50 border border-white/10 rounded-lg p-6 my-8">
+        <p class="text-neutral-300 italic">
+          This architecture allows engineering teams to remain agile and robust, providing a premium experience for end-users while keeping the codebase a joy to work in.
+        </p>
+      </div>
+    `,
+  },
+  {
     id: "1",
     slug: "nextjs-vs-tanstack-start-2026",
     title:

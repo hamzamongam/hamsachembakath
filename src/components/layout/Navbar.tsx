@@ -41,7 +41,7 @@ export function Navbar() {
               className="text-neutral-400 hover:text-white hover:bg-white/10"
             >
               <Link
-                href="https://github.com"
+                href="https://github.com/hamsachembakath"
                 target="_blank"
                 aria-label="GitHub"
               >
@@ -55,7 +55,7 @@ export function Navbar() {
               className="text-neutral-400 hover:text-white hover:bg-white/10"
             >
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/hamsa-c-671569190/"
                 target="_blank"
                 aria-label="LinkedIn"
               >
@@ -68,7 +68,7 @@ export function Navbar() {
               asChild
               className="text-neutral-400 hover:text-white hover:bg-white/10"
             >
-              <Link href="mailto:contact@hamsa.dev" aria-label="Email">
+              <Link href="mailto:hamsa.mongam@gmail.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
