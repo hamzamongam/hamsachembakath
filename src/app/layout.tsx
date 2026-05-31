@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Hamsa Chembakath Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/profile.png",
         width: 1200,
         height: 630,
         alt: "Hamsa Chembakath Portfolio",
@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     title: "Hamsa Chembakath | Senior App Architect & Full-Stack Developer",
     description:
       "Specialized in scalable SaaS architecture, high-performance React applications, and data-driven growth strategies.",
-    images: ["/og-image.jpg"],
+    images: ["/profile.png"],
     creator: "@hamzamongam",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/hamsa-favicon.png",
   },
   robots: {
     index: true,
