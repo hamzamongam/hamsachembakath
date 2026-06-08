@@ -61,15 +61,19 @@ export function About() {
 
                 {/* biome-ignore lint/performance/noImgElement: Custom onError fallback is implemented */}
                 <img
-                  src="/profile.png"
+                  src="/profile.webp"
                   alt="Hamsa Chembakath"
                   className="object-cover w-full h-full grayscale transition-all duration-700 hover:grayscale-0 hover:scale-[1.03]"
                   onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                    const fallback = e.currentTarget.nextElementSibling;
-                    if (fallback) {
-                      fallback.classList.remove("hidden");
-                      fallback.classList.add("flex");
+                    if (e.currentTarget.src.endsWith(".webp")) {
+                      e.currentTarget.src = "/profile.png";
+                    } else {
+                      e.currentTarget.style.display = "none";
+                      const fallback = e.currentTarget.nextElementSibling;
+                      if (fallback) {
+                        fallback.classList.remove("hidden");
+                        fallback.classList.add("flex");
+                      }
                     }
                   }}
                 />

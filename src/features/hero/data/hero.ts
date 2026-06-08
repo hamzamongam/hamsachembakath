@@ -21,7 +21,7 @@ export const heroData: HeroData = {
       primary: false,
     },
   ],
-  profileImage: "/profile.png",
+  profileImage: "/profile.webp",
   techStack: {
     title: "Powering modern experiences with",
     items: [

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { TerminalOverlay } from "@/features/developer-mode";
@@ -100,10 +99,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white selection:bg-primary/30 min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-black text-white selection:bg-primary/30 min-h-screen flex flex-col`}
       >
-        <Script
-          id="json-ld-profile"
+        <script
           type="application/ld+json"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: Inject JSON-LD Schema metadata
           dangerouslySetInnerHTML={{
@@ -160,8 +158,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <Script
-          id="json-ld-service"
+        <script
           type="application/ld+json"
           // biome-ignore lint/security/noDangerouslySetInnerHtml: Inject JSON-LD Schema metadata
           dangerouslySetInnerHTML={{
