@@ -1,6 +1,5 @@
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { architectureData } from "../data/architecture";
 
 export function Architecture() {
@@ -9,9 +8,12 @@ export function Architecture() {
   return (
     <section
       id="architecture"
-      className="py-24 bg-neutral-900 border-t border-white/5"
+      className="py-24 bg-neutral-950/20 border-t border-white/5 relative overflow-hidden"
     >
-      <Container>
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none" />
+
+      <Container className="relative z-10">
         <div className="mb-16 md:text-center max-w-3xl mx-auto">
           <Badge
             variant="outline"
@@ -27,21 +29,20 @@ export function Architecture() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <Card
+            <div
               key={item.title}
-              className={`bg-white/5 border-white/10 ${item.className || ""}`}
+              className={`relative bg-neutral-900/40 backdrop-blur-md border border-white/5 hover:border-primary/25 hover:bg-neutral-900/65 transition-all duration-500 rounded-2xl p-7 shadow-2xl overflow-hidden group ${item.className || ""}`}
             >
-              <CardHeader>
-                <CardTitle className="text-xl text-white">
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-neutral-400 leading-relaxed">
-                  {item.description}
-                </p>
-              </CardContent>
-            </Card>
+              {/* Top accent line */}
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <h3 className="text-xl text-white font-bold mb-4 tracking-wide group-hover:text-primary transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className="text-neutral-400 leading-relaxed text-sm">
+                {item.description}
+              </p>
+            </div>
           ))}
         </div>
       </Container>

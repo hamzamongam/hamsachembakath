@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export const TypewriterEffect = ({
   words,
@@ -15,28 +14,27 @@ export const TypewriterEffect = ({
   className?: string;
   cursorClassName?: string;
 }) => {
-  // Split words into characters
-  const wordsArray = words.map((word) => {
+  // Split words into characters with stable unique IDs
+  const wordsArray = words.map((word, idx) => {
+    const wordText = word.text;
+    const chars = wordText.split("").map((char, charIdx) => ({
+      char,
+      id: `char-${idx}-${charIdx}-${char}`,
+    }));
     return {
       ...word,
-      text: word.text.split(""),
+      id: `word-${idx}-${wordText}`,
+      chars,
     };
   });
-
-  const [scope, setScope] = useState(0);
-
-  useEffect(() => {
-    // Simple infinite loop effect could be added here if needed,
-    // but for now we render purely based on animation props
-  }, []);
 
   const renderWords = () => {
     return (
       <motion.div className="inline">
-        {wordsArray.map((word, idx) => {
+        {wordsArray.map((word) => {
           return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
+            <div key={word.id} className="inline-block">
+              {word.chars.map((charObj) => (
                 <motion.span
                   initial={{
                     opacity: 0,
@@ -46,13 +44,15 @@ export const TypewriterEffect = ({
                   }}
                   transition={{
                     duration: 0.3,
-                    delay: idx * 0.5 + index * 0.05, // Staggered delay for typing effect
+                    delay:
+                      wordsArray.indexOf(word) * 0.5 +
+                      word.chars.indexOf(charObj) * 0.05, // Staggered delay for typing effect
                     ease: "easeInOut",
                   }}
-                  key={`char-${index}`}
+                  key={charObj.id}
                   className={word.className}
                 >
-                  {char}
+                  {charObj.char}
                 </motion.span>
               ))}
               &nbsp;

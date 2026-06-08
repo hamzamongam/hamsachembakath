@@ -5,36 +5,36 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Enforce Dark Mode by Default - Midnight Theme */
-  --background: 240 10% 4%; /* #0a0a0b - Deep black/blue */
+  /* Enforce Dark Mode by Default - Premium Midnight Indigo Theme */
+  --background: 240 18% 3.5%; /* #05060b - deep indigo black */
   --foreground: 0 0% 98%;
 
-  --card: 240 10% 4%;
+  --card: 240 16% 5.5%; /* #080a10 - sleek dark card */
   --card-foreground: 0 0% 98%;
 
-  --popover: 240 10% 4%;
+  --popover: 240 18% 3.5%;
   --popover-foreground: 0 0% 98%;
 
-  --primary: 263.4 70% 50.4%; /* Deep Violet */
-  --primary-foreground: 210 40% 98%;
+  --primary: 188 94% 43%; /* Glowing Cyan (#06b6d4) */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 217 91% 60%; /* Branding Blue (#3b82f6) */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 240 12% 10%;
+  --muted-foreground: 240 5% 65%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 258 90% 66%; /* Branding Purple (#8b5cf6) */
+  --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 263.4 70% 50.4%;
+  --border: 240 12% 11%;
+  --input: 240 12% 11%;
+  --ring: 188 94% 43%;
 
-  --radius: 0.75rem;
+  --radius: 1.25rem; /* Smoother modern rounded edges */
 }
 
 @theme inline {
@@ -57,10 +57,11 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 6px);
 
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 
@@ -93,13 +94,30 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
   }
   /* Force dark mode behavior even without class */
   :root {
     color-scheme: dark;
+  }
+
+  /* Sleek custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #06b6d4, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+    border: 1px solid hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0891b2, #2563eb, #7c3aed);
   }
 }

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { BlogList } from "@/features/blog/components/BlogList";
 
 export const metadata: Metadata = {

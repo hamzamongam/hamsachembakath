@@ -8,7 +8,7 @@ export const experienceData: ExperienceData = {
   items: [
     {
       company: "Maple Tech Space",
-      location: "Infopark, Thrissur",
+      location: "Infopark Thrissur, Koratty, Kerala",
       role: "Senior React / Next.js Developer",
       period: "2021 – Present",
       description: "",
@@ -20,7 +20,7 @@ export const experienceData: ExperienceData = {
     },
     {
       company: "Personal SaaS Project: skoohub.com",
-      location: "Remote",
+      location: "Remote / Malappuram, Kerala",
       role: "Full-Stack Developer",
       period: "2024 – Present",
       description: "",
@@ -32,7 +32,7 @@ export const experienceData: ExperienceData = {
     },
     {
       company: "Capo International Trading Co.",
-      location: "Malappuram",
+      location: "Malappuram, Kerala",
       role: "React/Next.js Developer",
       period: "2020 – 2021",
       description: "",
@@ -44,7 +44,7 @@ export const experienceData: ExperienceData = {
     },
     {
       company: "Riosis Pvt Ltd",
-      location: "Angadipuram, Malappuram",
+      location: "Angadipuram, Malappuram, Kerala (near Manjeri)",
       role: "Front-End Developer",
       period: "2019 – 2020",
       description: "",
@@ -55,13 +55,13 @@ export const experienceData: ExperienceData = {
     },
     {
       company: "Multiple Companies",
-      location: "Various Locations",
+      location: "Kerala / Various Locations",
       role: "Early Career (2013 – 2019)",
       period: "2013 – 2019",
       description: "",
       points: [
-        "HTML Developer: at Deantz Pvt Ltd - Technopark - Thiruvananthapuram",
-        "Graphic Designer: at MK Group of companies, Vengara - Malappuram",
+        "HTML Developer: at Deantz Pvt Ltd - Technopark, Thiruvananthapuram, Kerala",
+        "Graphic Designer: at MK Group of companies, Vengara, Malappuram, Kerala",
         "Graphic Designer: at Berhama Studio - Ras Al Khaimah - UAE",
       ],
     },

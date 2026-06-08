@@ -46,7 +46,7 @@ export function Hero() {
               >
                 <Badge
                   variant="secondary"
-                  className="mb-8 px-4 py-1.5 text-sm font-medium border border-white/10 bg-white/5 text-neutral-300 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                  className="mb-8 px-4 py-1.5 text-sm font-medium border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.15)]"
                 >
                   {badge}
                 </Badge>
@@ -59,7 +59,7 @@ export function Hero() {
                 className="text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl text-white mb-6 break-words"
               >
                 {headline.prefix}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 block sm:inline">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 block sm:inline">
                   {headline.highlight}
                 </span>{" "}
                 {headline.suffix}
@@ -179,7 +179,7 @@ export function Hero() {
                     key={item.name}
                     className="group relative flex flex-col items-center justify-center"
                   >
-                    <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
+                    <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-25 blur-md transition-opacity duration-300" />
                     <div className="relative p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-110 transition-all duration-300 cursor-pointer">
                       {/* @ts-ignore - Dynamic icon rendering */}
                       <Icon

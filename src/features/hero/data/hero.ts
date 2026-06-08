@@ -1,4 +1,4 @@
-import { HeroData } from "../types/hero.types";
+import type { HeroData } from "../types/hero.types";
 
 export const heroData: HeroData = {
   badge: "Open to Senior Frontend Roles",

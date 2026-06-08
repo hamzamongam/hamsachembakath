@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import React, { MouseEvent } from "react";
+import type React from "react";
+import type { MouseEvent } from "react";
 import { cn } from "@/lib/utils";
 
 export const CardSpotlight = ({
@@ -22,6 +23,7 @@ export const CardSpotlight = ({
   }
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: Passive mouse movement detection for visual hover spotlight effect
     <div
       className={cn(
         "group relative border border-white/10 bg-white/5 overflow-hidden rounded-xl",
@@ -35,7 +37,7 @@ export const CardSpotlight = ({
           background: useMotionTemplate`
             radial-gradient(
               650px circle at ${mouseX}px ${mouseY}px,
-              rgba(255,255,255,0.15),
+              rgba(6,182,212,0.12),
               transparent 80%
             )
           `,

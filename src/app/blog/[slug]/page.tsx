@@ -51,5 +51,37 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  return <BlogPost post={post} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      url: "https://hamsadev.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Hamsa Chembakath",
+      url: "https://hamsadev.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://hamsadev.com/blog/${post.slug}`,
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: Inject JSON-LD Schema metadata
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogPost post={post} />
+    </>
+  );
 }

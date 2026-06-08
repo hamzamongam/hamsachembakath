@@ -25,9 +25,12 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-neutral-950 border-t border-white/5"
+      className="py-24 bg-neutral-950/20 border-t border-white/5 relative overflow-hidden"
     >
-      <Container>
+      {/* Centered Glowing Sphere */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <Container className="relative z-10">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           <Badge
             variant="outline"

@@ -13,7 +13,7 @@ export function Projects() {
     <section id="projects" className="py-24 bg-neutral-950 relative">
       {/* Background Glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none" />
 
       <Container>
         <div className="mb-16 md:text-center max-w-3xl mx-auto relative z-10">

@@ -1,10 +1,11 @@
-import { BlogPost } from "./types";
+import type { BlogPost } from "./types";
 
 export const blogPosts: BlogPost[] = [
   {
     id: "3",
     slug: "building-scalable-web-apps-architecture-tech-stack",
-    title: "Building Scalable Web Apps: A Deep Dive into Modern Architecture and Tech Stacks",
+    title:
+      "Building Scalable Web Apps: A Deep Dive into Modern Architecture and Tech Stacks",
     excerpt:
       "Discover the architectural decisions, modern tech stack, and Feature-Driven Development (FDD) approach that power highly scalable, robust web applications today.",
     date: "May 31, 2026",
@@ -13,7 +14,13 @@ export const blogPosts: BlogPost[] = [
       name: "Hamsa",
       avatar: "/avatar.jpg",
     },
-    tags: ["React 19", "TanStack Start", "Architecture", "FDD", "Web Development"],
+    tags: [
+      "React 19",
+      "TanStack Start",
+      "Architecture",
+      "FDD",
+      "Web Development",
+    ],
     content: `
       <p class="lead text-lg text-neutral-300 mb-8">
         When building a modern, data-intensive web application, establishing a scalable, maintainable, and highly performant foundation is critical. In this post, we'll dive deep into an optimized project folder architecture, explore the cutting-edge packages we rely on, and explain the core philosophy behind our Feature-Driven Development (FDD) approach.

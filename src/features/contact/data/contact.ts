@@ -4,7 +4,7 @@ export const contactData: ContactData = {
   title: "Get in Touch",
   subtitle: "Contact",
   description:
-    "Always open to discussing new opportunities, interesting collaborations, or just having a chat about tech. Drop me a line!",
+    "Always open to discussing new opportunities, remote/hybrid collaborations, or just having a chat about tech. Based in Malappuram, Kerala, with close access to Kochi, Kozhikode, Koratty, and Manjeri.",
   links: [
     {
       label: "Email Me",

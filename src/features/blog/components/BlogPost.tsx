@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import Link from "next/link";
-import { BlogPost as BlogPostType } from "../data/types";
+import type { BlogPost as BlogPostType } from "../data/types";
 
 export function BlogPost({ post }: { post: BlogPostType }) {
   return (
@@ -57,6 +57,7 @@ export function BlogPost({ post }: { post: BlogPostType }) {
 
         <div
           className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-neutral-300 prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-white prose-code:text-cyan-300 prose-code:bg-cyan-500/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-blockquote:border-l-cyan-500 prose-blockquote:bg-white/5 prose-blockquote:p-6 prose-blockquote:not-italic prose-blockquote:rounded-r-lg"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Render HTML content
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </motion.div>

@@ -1,10 +1,9 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { TerminalOverlay } from "@/features/developer-mode";
-import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Hamsa Chembakath",
   },
   description:
-    "Senior React, Next.js & TanStack Start Architect specialized in scalable SaaS architecture, Technical SEO, and Digital Growth. Creator of Skoohub and CPL Arena.",
+    "Senior React, Next.js & TanStack Start Architect based in Kerala (Kochi/Malappuram/Kozhikode/Koratty/Manjeri). Specialized in scalable SaaS architecture, Technical SEO, and Digital Growth. Creator of Skoohub and CPL Arena.",
   keywords: [
     "Hamsa Chembakath",
     "Senior Frontend Developer",
@@ -37,6 +36,18 @@ export const metadata: Metadata = {
     "Skoohub",
     "School Management System",
     "PWA",
+    "Next.js Developer Kerala",
+    "React Developer Kochi",
+    "Web Developer Malappuram",
+    "Freelance Developer Kozhikode",
+    "Web Design Koratty",
+    "Software Engineer Manjeri",
+    "Kerala",
+    "Malappuram",
+    "Kochi",
+    "Koratty",
+    "Kozhikode",
+    "Manjeri",
   ],
   authors: [{ name: "Hamsa Chembakath", url: "https://hamsadev.com" }],
   creator: "Hamsa Chembakath",
@@ -66,7 +77,7 @@ export const metadata: Metadata = {
     creator: "@hamzamongam",
   },
   icons: {
-    icon: "/hamsa-favicon.png",
+    icon: "/hamsa-favicon.svg",
   },
   robots: {
     index: true,
@@ -94,6 +105,7 @@ export default function RootLayout({
         <Script
           id="json-ld-profile"
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Inject JSON-LD Schema metadata
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -104,6 +116,22 @@ export default function RootLayout({
               sameAs: [
                 "https://www.linkedin.com/in/hamsa-c-671569190/",
                 "https://github.com/hamsachembakath",
+              ],
+              address: {
+                "@type": "PostalAddress",
+                "streetAddress": "Valapprakandi (H), Cheruputhoor, Mongam PO",
+                "addressLocality": "Malappuram",
+                "addressRegion": "Kerala",
+                "postalCode": "673642",
+                "addressCountry": "IN"
+              },
+              areaServed: [
+                { "@type": "AdministrativeArea", "name": "Kerala" },
+                { "@type": "City", "name": "Malappuram" },
+                { "@type": "City", "name": "Kochi" },
+                { "@type": "City", "name": "Kozhikode" },
+                { "@type": "City", "name": "Manjeri" },
+                { "@type": "City", "name": "Koratty" }
               ],
               knowsAbout: [
                 "React",
@@ -130,6 +158,42 @@ export default function RootLayout({
                 },
               ],
             }),
+          }}
+        />
+        <Script
+          id="json-ld-service"
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: Inject JSON-LD Schema metadata
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Hamsa Chembakath - Freelance Web Developer & Architect",
+              image: "https://hamsadev.com/profile.png",
+              url: "https://hamsadev.com",
+              telephone: "+919562191932",
+              priceRange: "$$$",
+              address: {
+                "@type": "PostalAddress",
+                "streetAddress": "Valapprakandi (H), Cheruputhoor, Mongam PO",
+                "addressLocality": "Malappuram",
+                "addressRegion": "Kerala",
+                "postalCode": "673642",
+                "addressCountry": "IN"
+              },
+              areaServed: [
+                "Kerala",
+                "Malappuram",
+                "Kochi",
+                "Kozhikode",
+                "Manjeri",
+                "Koratty"
+              ],
+              sameAs: [
+                "https://www.linkedin.com/in/hamsa-c-671569190/",
+                "https://github.com/hamsachembakath"
+              ]
+            })
           }}
         />
         <div className="flex flex-col min-h-screen">

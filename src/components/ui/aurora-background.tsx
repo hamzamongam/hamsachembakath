@@ -1,5 +1,6 @@
 "use client";
-import React, { ReactNode } from "react";
+import type React from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
@@ -29,7 +30,7 @@ export const AuroraBackground = ({
               `
             [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
             [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
-            [--aurora:repeating-linear-gradient(100deg,#3b82f6_10%,#a5b4fc_15%,#9333ea_20%,#c084fc_25%,#60a5fa_30%)]
+            [--aurora:repeating-linear-gradient(100deg,#06b6d4_10%,#3b82f6_15%,#8b5cf6_20%,#06b6d4_25%,#3b82f6_30%)]
             [background-image:var(--white-gradient),var(--aurora)]
             dark:[background-image:var(--dark-gradient),var(--aurora)]
             [background-size:300%,_200%]

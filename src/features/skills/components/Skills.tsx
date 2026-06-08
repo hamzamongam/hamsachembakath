@@ -8,12 +8,11 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { skillsData } from "../data/skills";
 
 // Helper to map category to icon
 const CategoryIcon = ({ name }: { name: string }) => {
-  // Simple mapping, could be strict typed if we extract category names as a Union type
   switch (name) {
     case "Frontend Core":
       return <LayoutGrid className="h-5 w-5 text-neutral-300" />;
@@ -36,7 +35,7 @@ const CategoryIcon = ({ name }: { name: string }) => {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 relative bg-black/40">
+    <section id="skills" className="py-24 relative bg-black/20">
       {/* Decor pattern */}
       <div className="absolute right-0 top-1/4 w-1/3 h-1/2 bg-primary/10 -z-10 blur-[100px] rounded-full opacity-50" />
 
@@ -59,34 +58,34 @@ export function Skills() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {Object.entries(skillsData).map(([category, skills]) => (
-            <Card
+            <CardSpotlight
               key={category}
-              className="group h-full border-white/5 bg-neutral-900/50 backdrop-blur-md hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+              className="flex flex-col h-full bg-neutral-900/40 backdrop-blur-md border-white/5 group rounded-2xl"
             >
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-white/5 group-hover:bg-primary/20 transition-colors">
-                    <CategoryIcon name={category} />
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-xl bg-white/5 group-hover:bg-primary/20 group-hover:scale-105 transition-all duration-300 shrink-0 border border-white/5">
+                      <CategoryIcon name={category} />
+                    </div>
+                    <h3 className="text-lg text-neutral-200 group-hover:text-white font-semibold transition-colors duration-300 tracking-wide">
+                      {category}
+                    </h3>
                   </div>
-                  <CardTitle className="text-lg text-neutral-200 group-hover:text-white transition-colors">
-                    {category}
-                  </CardTitle>
                 </div>
-              </CardHeader>
-              <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <Badge
                       key={skill}
                       variant="secondary"
-                      className="bg-white/5 text-neutral-400 font-normal border border-white/5 hover:border-primary/30 hover:text-primary transition-colors"
+                      className="bg-white/5 text-neutral-450 font-normal border border-white/5 hover:border-primary/30 hover:text-primary transition-colors duration-300"
                     >
                       {skill}
                     </Badge>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </CardSpotlight>
           ))}
         </div>
       </Container>

@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Maximize2, Minimize2, Terminal, X } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import { Terminal, X } from "lucide-react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTerminal } from "../hooks/useTerminal";
 
 export function TerminalOverlay() {
@@ -60,6 +61,7 @@ export function TerminalOverlay() {
                 </span>
               </div>
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
                 className="text-neutral-400 hover:text-white transition-colors"
               >
@@ -67,10 +69,9 @@ export function TerminalOverlay() {
               </button>
             </div>
 
-            {/* Terminal Body */}
             <div className="flex-1 overflow-y-auto p-4 space-y-2 text-neutral-300 scrollbar-thin scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20">
-              {history.map((entry, i) => (
-                <div key={i} className="whitespace-pre-wrap break-words">
+              {history.map((entry) => (
+                <div key={entry.id} className="whitespace-pre-wrap break-words">
                   {entry.type === "command" && (
                     <div className="flex items-center text-neutral-500">
                       <span className="mr-2">$</span>
@@ -104,7 +105,6 @@ export function TerminalOverlay() {
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-1 bg-transparent border-none outline-none text-white placeholder-white/20"
                 placeholder="Type 'help'..."
-                autoFocus
               />
             </form>
           </motion.div>
